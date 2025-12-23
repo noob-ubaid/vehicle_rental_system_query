@@ -39,3 +39,19 @@ where
   )
 ```
 Explanation : At first, I select what I need to show from the vehicles table. Then I use a subquery with the not exists condition b.vehicle_id = v.vehicle_id. It will give the results that do not exist in the bookings table.
+
+
+## this is the answer of the third query:
+```sql
+select
+  *
+from
+  vehicles
+where
+type
+  = 'car'
+  and status = 'available'
+
+```
+
+Explanation : At first, I select everything from the vehicles table using *. Then I set a condition using the WHERE clause: if type = 'car' and status = 'available'. This code will return the vehicles whose type is car and status is available.
