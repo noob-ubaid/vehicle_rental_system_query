@@ -41,3 +41,16 @@ where
 type
   = 'car'
   and status = 'available'
+
+
+  -- fourth query
+select
+  v.vehicle_name,
+  count(b.booking_id)
+from
+  vehicles as v
+  join bookings as b on v.vehicle_id = b.vehicle_id
+group by
+  v.vehicle_name
+having
+  count(b.booking_id) > 2
