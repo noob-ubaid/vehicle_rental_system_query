@@ -55,3 +55,20 @@ type
 ```
 
 Explanation : At first, I select everything from the vehicles table using *. Then I set a condition using the WHERE clause: if type = 'car' and status = 'available'. This code will return the vehicles whose type is car and status is available.
+
+
+
+## this is the answer of the fourth query:
+```sql
+select
+  v.vehicle_name,
+  count(b.booking_id)
+from
+  vehicles as v
+  join bookings as b on v.vehicle_id = b.vehicle_id
+group by
+  v.vehicle_name
+having
+  count(b.booking_id) > 2
+```
+Explanation : At first, I select what I need to show in the result from the vehicles table. Then I merge the vehicles table with the bookings table using the condition v.vehicle_id = b.vehicle_id. After that, I group the results using the GROUP BY clause and set a condition with HAVING: count(b.booking_id) > 2. This code will return the vehicles that have more than 2 bookings.
